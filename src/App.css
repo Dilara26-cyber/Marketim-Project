@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5e5e577;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.page {
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0.5em;
+  transition: 0.3s all ease-in;
+}
+.page:hover {
+  color: #1ea4ce;
+}
+.activePage {
+  background-color: #1ea4ce;
   color: white;
+  transition: 0.3s all ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+.page-container {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: space-around;
+  max-width: 650px;
+  align-items: center;
+  padding: 0 1em;
+  margin-top: 2em;
+  background-color: white;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.next,
+.prev {
+  color: #697488;
+  transition: 0.3s color ease-in;
+}
+
+.next:hover,
+.prev:hover {
+  color: #1ea4ce;
+}
+@media (min-width: 720px) {
+  .prev::before,
+  .next::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
+
+  .prev::before {
+    background-image: url(./images/left-arrow.png);
+    left: 10px;
+  }
+
+  .next::after {
+    right: 10px;
+    background-image: url(./images/right-arrow.png);
   }
 }
